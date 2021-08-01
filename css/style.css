@@ -104,7 +104,7 @@
 }
 
 .order__cursive {
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Cedarville Cursive';
     color: #444A4A;
     font-size: 28px;
 }
@@ -148,6 +148,113 @@
     left: 9%;
 }
 
+/*about*/
+
+.about {
+    margin-top: 282px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee__image {
+    background-color: #FAE9E0;
+    position: relative;
+    width: 33.7%;
+    margin-left: 1.4%;
+}
+
+.coffee__image img {
+    position: absolute;
+    top: 26%;
+    left: 3%;
+}
+
+.image__text {
+    font-family: 'Cedarville Cursive';
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 1.89em;
+    color: #000000;
+    opacity: 0.75;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 1.5%;
+    left: -15%;
+}
+
+
+.coffee__text {
+    width: 57%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 1.89em;
+    letter-spacing: 0.001em;
+    color: #444A4A;
+}
+
+.text__bold {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 1em;
+    color: #000000;
+    margin-bottom: -1.6%;
+}
+
+.text__down {
+    margin-top: 2.6%;
+} 
+
+/*promotion*/
+
+.promotion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 144px;
+}
+
+.coffee__btn {
+    background-color: #2D635E;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 17px 68px 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.25em;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.promotion .coffee__text {
+    width: 54%;
+}
+
+.promotion .text__bold {
+    margin-bottom: 0.8%;
+}
+
+.promotion .coffee__image {
+    background-color: #E3EBE7;
+    width: 36.4%;
+    margin: 0;
+    margin-top: 4%;
+}
+
+.promotion .coffee__image img {
+    top: -11%;
+    left: 18%;
+}
+
+.promotion .image__text {
+    left: auto;
+    right: -13%;
+    top: 4%;
+}
+
+/*coffee__socials*/
+
 .coffee__socials {
     width: 6%;
     height: 100%;
@@ -177,8 +284,127 @@
     transform: rotate(180deg);
 }
 
+/*slider*/
+
+.slider {
+    margin-top: 160px;
+    width: 100%;
+}
+
+.slider .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__btn {
+    cursor: pointer;
+    padding-bottom: 40px;
+}
+
+.slider__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    margin: 0 50px 44px;
+}
+
+.info__card {
+    width: 29.7%;
+    text-align: center;
+    padding: 54px 0 47px;
+    box-shadow: 0px 23px 34px rgba(35, 57, 55, 0.17);
+    border-radius: 25px;
+}
+
+.card__bold {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 1em;
+    color: #000000;
+    margin: 0 52px 25px;
+}
+
+.card__text {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 1.8em;
+    letter-spacing: 0.001em;
+    color: #444A4A;
+    margin: 0 52px;
+}
+
+.info__card .coffee__btn {
+    margin-top: 55px;
+}
+
+
+/*contact*/
+
+.contact {
+    margin-top: 129px;
+}
+
+.contact .container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.map {
+    position: relative;
+}
+
+.map .image__text {
+    left: auto;
+    right: -6.6%;
+    top: 1%;
+}
+
+.line {
+    height: fit-content;
+    margin: 32px 32px 0 42px;
+}
+
+.address {
+    width: 20%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 2.89em;
+    letter-spacing: 0.001em;
+    color: #444A4A;
+}
+
+.address__bold {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1.41em;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-bottom: 7px;
+    padding-top: 14px;
+}
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 1.89em;
+    text-align: center;
+    letter-spacing: 0.001em;
+    color: #444A4A;
+    margin-top: 114px;
+}
 
 /*media*/
+
 @media(max-width: 1000px) {
     
     .header {
