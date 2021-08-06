@@ -12,8 +12,8 @@
     </head>
     <body>
 <!--header-->
-        <header class="header">
-            <img class="burger" src="/pictures/burger.png" alt="burger">
+        <header class="header" id="header">
+            <img class="burger" onclick="showMenu()" src="/pictures/burger.png" alt="burger">
             <div class="header__logo">
                 <img src="/pictures/logo_img.png" alt="logo">
                 <a class="logo__text" href="">Samwayle</a>
@@ -29,7 +29,27 @@
             </div>
         </header>
 <!--header-end-->
-
+<!--hidden-nav-->
+        <div class="hidden-nav" id="menu">
+            <div class="header__logo">
+                <img class="close" onclick="hideMenu()" src="/pictures/close.png" alt="close">
+                <img src="/pictures/logo_img.png" alt="logo">
+                <a class="logo__text" href="">Samwayle</a>
+            </div>
+            <ul>
+                <li>Home</li>
+                <li>About us</li>
+                <li>Promotion</li>
+                <li>Shop</li>
+                <li>Contacts</li>
+            </ul> 
+            <div class="nav__socials">
+                <a href=""><img class="social__icon" src="/pictures/insta.png" alt="insta"></a>
+                <a href=""><img class="social__icon" src="/pictures/facebook.png" alt="facebook"></a>
+                <a href=""><img class="social__icon" src="/pictures/twitter.png" alt="twitter"></a>
+            </div>
+        </div>
+<!--hidden-nav-end-->
         <div class="container">    
 <!--coffee-->  
             <section class="coffee">
@@ -108,9 +128,9 @@
     <!--socials-->    
                 <div class="coffee__socials">
                     <div class="social">
-                        <img class="social__icon" src="/pictures/twitter.png" alt="twitter">
-                        <img class="social__icon" src="/pictures/insta.png" alt="insta">
-                        <img class="social__icon" src="/pictures/facebook.png" alt="facebook">
+                        <a href=""><img class="social__icon" src="/pictures/twitter.png" alt="twitter"></a>
+                        <a href=""><img class="social__icon" src="/pictures/insta.png" alt="insta"></a>
+                        <a href=""><img class="social__icon" src="/pictures/facebook.png" alt="facebook"></a>
                         <div class="social__text">Follow us</div>
                     </div>
                 </div>
@@ -203,5 +223,6 @@
             </footer>
 <!--footer-end-->
         </div>
+        <script src="/script.js"></script>
     </body>
 </html>
