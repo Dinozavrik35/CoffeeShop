@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    position: relative;
 }
 
 /*header*/
@@ -19,12 +22,15 @@
     align-items: center;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
+    background-color: white;
+    z-index: 3;
     font-size: 16px;
-    position: absolute;
-    max-width: 1200px;
+    position: fixed;
     width: 100%;
-    top: 30px;
-
+    padding: 30px 5% 5px;
+    padding-top: 30px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 10px 15px rgba(127, 129, 129, 0.17);
 }
 
 .header__logo {
@@ -36,6 +42,7 @@
 .burger {
     display: none;
     cursor: pointer;
+    padding-top: 30px;
 }
 
 .logo__text {
@@ -144,8 +151,10 @@
 
 .main__image img {
     position: relative;
-    top: 37%;
+    top: 16%;
     left: 9%;
+    width: 85.4%;
+    height: auto;
 }
 
 /*about*/
@@ -167,6 +176,8 @@
     position: absolute;
     top: 26%;
     left: 3%;
+    width: 97.4%;
+    height: auto;
 }
 
 .image__text {
@@ -199,7 +210,7 @@
     font-size: 38px;
     line-height: 1em;
     color: #000000;
-    margin-bottom: -1.6%;
+    margin-bottom: 5%;
 }
 
 .text__down {
@@ -231,10 +242,6 @@
     width: 54%;
 }
 
-.promotion .text__bold {
-    margin-bottom: 0.8%;
-}
-
 .promotion .coffee__image {
     background-color: #E3EBE7;
     width: 36.4%;
@@ -245,6 +252,8 @@
 .promotion .coffee__image img {
     top: -11%;
     left: 18%;
+    width: 58.5%;
+    height: auto;
 }
 
 .promotion .image__text {
@@ -270,8 +279,10 @@
 }
 
 .social__icon {
-    width: 30px;
-    height: 32px;
+    max-width: 30px;
+    width: 100%;
+    max-height: 32px;
+    height: 100%;
     margin-bottom: 14px;
 }
 
@@ -324,7 +335,7 @@
     font-size: 28px;
     line-height: 1em;
     color: #000000;
-    margin: 0 52px 25px;
+    margin: 0 auto 25px;
 }
 
 .card__text {
@@ -335,6 +346,7 @@
     letter-spacing: 0.001em;
     color: #444A4A;
     margin: 0 52px;
+    height: 216px;
 }
 
 .info__card .coffee__btn {
@@ -355,6 +367,12 @@
 
 .map {
     position: relative;
+    width: 53.9%;
+}
+
+.map img {
+    width: 100%;
+    height: auto;
 }
 
 .map .image__text {
@@ -366,6 +384,7 @@
 .line {
     height: fit-content;
     margin: 32px 32px 0 42px;
+    width: 8.5%;
 }
 
 .address {
@@ -389,6 +408,25 @@
     padding-top: 14px;
 }
 
+.address__btn {
+    display: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1em;
+    color: #444A4A;
+    padding: 16px 25px 15px 18px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.address__btn::after {
+    content: url(/pictures/arrow.png);
+    margin-left: 5px;
+}
+
 /*footer*/
 
 .footer {
@@ -405,10 +443,122 @@
 
 /*media*/
 
-@media(max-width: 1000px) {
+/*1920*/
+
+@media(max-width: 1920px) {
+    .container {
+        max-width: 1700px;
+        width: 100%;
+    }
+
+    .coffee__image img {
+        top: -15%;
+        left: 14%;
+        width: 85%;
+    }
+
+    .promotion .coffee__image img {
+        top: -50%;
+        left: 25%;
+        width: 48%;
+    }
+
+    .card__text {
+        margin: 0 130px
+    }
+
+    .slider {
+        margin-top: 300px;
+    }
+
+}
+
+/*1700*/
+
+@media(max-width: 1700px) {
+    .container {
+        width: 90%;
+    }
+
+    .card__text {
+        margin: 0 50px
+    }
+}
+
+/*1440*/
+
+@media(max-width: 1440px) {
+    .card__text {
+        margin: 0 20px
+    }
+
+    .coffee__image img {
+        position: absolute;
+        top: 26%;
+        left: 3%;
+        width: 97.4%;
+        height: auto;
+    }
     
+    .promotion .coffee__image img {
+        top: -11%;
+        left: 18%;
+        width: 58.5%;
+        height: auto;
+    }
+}
+
+/*1200*/
+
+@media(max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+
+    .info__card {
+        width: 32%;
+    }
+
+    .card__bold {
+        margin: 0 auto 15px;
+    }
+    
+    .card__text {
+        font-size: 18px;
+        margin: 0 30px;
+    }
+
+    .slider .coffee__btn {
+        padding: 17px 40px 14px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .address{
+        width: 23%;
+        font-size: 17px;
+    }
+}
+
+/*1150*/
+
+@media(max-width: 1150px) {
+    .card__text {
+        font-size: 16px;
+    }
+
+    .address {
+        width: 25%;
+    }
+}
+
+/*1050*/
+
+@media(max-width: 1050px) {
+
     .header {
         justify-content: center;
+        padding-top: 20px;
     }
 
     .header__nav {
@@ -418,8 +568,377 @@
     .burger {
         display: inline-block;
         position: absolute;
+        padding-top: 20px;
         top: 20px;
-        left: 18px;
+        left: 5%;
+    }
+
+    .coffee {
+        height: 1200px;
+    }
+
+    .order__cursive {
+        font-size: 20px;
+    }
+
+    .order__text {
+        font-size: 46px;
+        margin: 15px 0;
+    }
+
+    .order__btn {
+        font-size: 19px;
+        padding: 19px 40px 13px;
+    }
+
+    .about {
+        margin-top: 130px;
+    }
+
+    .image__text {
+        font-size: 20px;
+    }
+
+    .coffee__text {
+        font-size: 15px;
+    }
+
+    .text__bold {
+        font-size: 30px;
+        margin-bottom: 2%;
+    }
+
+    .text__down {
+        font-size: 15px;
+    }
+
+    .coffee__btn {
+        font-size: 18px;
+        padding: 17px 50px 14px;
+    }
+
+    .promotion {
+        margin-top: 110px;
+    }
+
+    .social__icon {
+        width: 50%;
+        height: auto;
+    }
+
+    .social__text {
+        font-size: 20px;
+    }
+
+    .slider {
+        margin-top: 50px;
+    }
+
+    .card__text {
+        margin: 0 18px;
+    }
+}
+
+
+/*970*/
+
+@media (max-width: 970px) {
+    .slider__btn {
+        display: none;
+    }
+
+    .slider__info {
+        margin: 0 0 44px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .map {
+        width: 65%;
+    }
+
+    .address {
+        width: 40%;
+        margin-left: 10%;
+    }
+}
+
+/*800*/
+
+@media (max-width: 800px) {
+
+    .main__order {
+        margin-top: 9%;
     }
     
+    .order__cursive {
+        font-size: 17px;
+    }
+
+    .order__text {
+        font-size: 38px;
+    }
+
+    .order__btn {
+        font-size: 17px;
+        padding: 16px 32px 12px;
+    }
+
+    .order__btn::after {
+        content: url(/pictures/warrow.png);
+        margin-left: 30px;
+    }
+
+    .main__arrow {
+        display: none;
+    }
+
+    .main__image {
+        width: 40%;
+    }
+
+    .about, .promotion {
+        margin: 130px auto 0;
+        width: 100%;
+    }
+
+    .coffee__image img {
+        top: 20%;
+    }
+
+    .promotion {
+        margin: 50px auto 0;
+    }
+
+    .promotion .coffee__btn {
+        display: none;
+    }
+
+    .social {
+        top: 180px;
+    }
+
+    .slider {
+        margin-top: 0;
+    }
+}
+
+
+/*700*/
+
+@media (max-width: 700px) {
+
+    .coffee {
+        height: 1500px;
+    }
+    
+    .coffee__content {
+        width: 100%;
+    }
+
+    .main {
+        justify-content: center;
+    }
+    
+    .main__order {
+        width: 80%;
+        text-align: center;
+        margin-top: 5%;
+    }
+    
+    .main__image {
+        display: none;
+    }
+
+    .image__text {
+        display: none;
+    }
+
+    .about {
+        margin: 95px auto 0;
+    }
+
+    .about, .promotion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee__image {
+        margin: 0;
+        width: 50%;
+    }
+
+    .coffee__image img {
+        position: relative;
+    }
+
+    .coffee__text {
+        margin-top: 30px;
+        margin-left: 3%;
+    }
+
+    .promotion {
+        flex-flow: column-reverse;
+    }
+
+    .promotion .coffee__image {
+        width: 50%;
+    }
+
+    .coffee__socials {
+        display: none;
+    }
+
+    .slider {
+        margin-top: 100px;
+    }
+
+    .slider__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info__card {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .card__text {
+        margin: 0 25%;
+    }
+
+    .slider__btn {
+        display: none;
+    }
+
+    .slider .coffee__btn {
+        margin: 0;
+    }
+
+    .contact .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map {
+        width: 90%;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .address {
+        width: 70%;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    .footer {
+        margin-top: 70px;
+    }
+
+}
+
+/*600*/
+
+@media (max-width: 600px) {
+    .card__text {
+        margin: 0 18%;
+    }
+
+    .coffee__text {
+        width: 70%;
+    }
+
+    .promotion .coffee__text {
+        width: 70%;
+    }
+
+}
+
+/*500*/
+
+@media (max-width: 500px) {
+    
+    .coffee__image {
+        width: 73%;
+    }
+    
+    .coffee__text {
+        width: 90%;
+    }
+
+    .promotion .coffee__text {
+        width: 90%;
+    }
+
+    .promotion .coffee__image {
+        width: 73%;
+    }
+
+    .slider {
+        margin-top: 25px;
+    }
+
+    .slider__info {
+        margin: 0 0px 44px;
+    }
+
+    .info__card {
+        width: 90%;
+        margin-top: 45px;
+    }
+
+    .card__text {
+        margin: 0 16%;
+    }
+
+    .address span {
+        display: none;
+    }
+
+    .address__btn {
+        display: inline-block;
+    }
+}
+
+/*350*/
+
+@media (max-width: 350px) {
+    .slider {
+        margin-top: 70px;
+    }
+    
+    .card__text {
+        margin: 0px 9%;
+    }
+
+    .address {
+        width: 90%;
+    }
+}
+
+/*300*/
+
+@media (max-width: 300px) {
+
+    .header__logo img {
+        display: none;
+    }
+
+    .order__btn::after {
+        display: none;
+    }
+
+    .info__card {
+        margin-top: 80px;
+    }
+
+    .address {
+        width: 95%;
+    }
 }
