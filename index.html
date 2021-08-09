@@ -6,35 +6,66 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Cedarville+Cursive&family=Josefin+Sans:wght@700&display=swap" 
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Cedarville+Cursive&family=Josefin+Sans:wght@300;400;700&display=swap" 
         rel="stylesheet">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
     </head>
     <body>
 <!--header-->
         <header class="header" id="header">
-            <img class="burger" onclick="showMenu()" src="/pictures/burger.png" alt="burger">
+            <img class="header__burger" onclick="showMenu()" src="/pictures/burger.png" alt="burger">
             <div class="header__logo">
                 <img src="/pictures/logo_img.png" alt="logo">
-                <a class="logo__text" href="">Samwayle</a>
+                <a class="header__logo-text" href="">Samwayle</a>
             </div>
-            <div class="header__nav">
+            <nav class="nav">
                 <div class="nav__item">About us</div>
                 <div class="nav__item">Promotion</div>
                 <div class="nav__item">Shop</div>
                 <div class="nav__item">Contacts</div>
-                <button class="nav__btn">
+                <button class="nav__btn" id="contact">
                     Contact Us
                 </button>
-            </div>
+            </nav>
         </header>
 <!--header-end-->
+<!--form-->
+        <div class="feedback" id="feedback">
+            <div class="form">
+                <img class="form__close" onclick="hideForm()" src="/pictures/close.png" alt="close">
+                <div class="form__text form__text--main">Contact Us</div>
+                <div class="form__text">First Name*</div>
+                <input class="form__input" type="text">
+                <div class="form__text">Last Name</div>
+                <input class="form__input" type="text">
+                <div class="form__text">Email*</div>
+                <input class="form__input" type="email">
+                <div class="form__text">Phone Number</div>
+                <input class="form__input" type="tel">
+                <div class="form__text">Message*</div>
+                <textarea class="form__input form__area" type="text"></textarea>
+                <div class="form__warning">
+                    <div class="form__star">* - fields are obligatory for filling</div>
+                    <div class="form__confirmation">
+                        <label id="confirm_label" for="confirm">
+                            <input class="form__confirmation-input" id="confirm" type="checkbox" checked>
+                            <img class="form__check" src="/pictures/okay.png" id="check">
+                        </label>
+                            I agree to the <a href="">processing of personal data</a>
+                    </div>
+                </div>
+                <button class="form__btn">
+                    Submit
+                </button>
+            </div>
+        </div>
+<!--form-end-->
 <!--hidden-nav-->
         <div class="hidden-nav" id="menu">
-            <div class="header__logo">
-                <img class="close" onclick="hideMenu()" src="/pictures/close.png" alt="close">
+            <div class="hidden-nav__inner header__logo">
+                <img class="hidden-nav__close" onclick="hideMenu()" src="/pictures/close.png" alt="close">
                 <img src="/pictures/logo_img.png" alt="logo">
-                <a class="logo__text" href="">Samwayle</a>
+                <a class="hidden-nav__link header__logo-text" href="">Samwayle</a>
             </div>
             <ul>
                 <li>Home</li>
@@ -43,10 +74,10 @@
                 <li>Shop</li>
                 <li>Contacts</li>
             </ul> 
-            <div class="nav__socials">
-                <a href=""><img class="social__icon" src="/pictures/insta.png" alt="insta"></a>
-                <a href=""><img class="social__icon" src="/pictures/facebook.png" alt="facebook"></a>
-                <a href=""><img class="social__icon" src="/pictures/twitter.png" alt="twitter"></a>
+            <div class="hidden-nav__socials">
+                <a href=""><img class="hidden-nav__icon social__icon" src="/pictures/insta.png" alt="insta"></a>
+                <a href=""><img class="hidden-nav__icon social__icon" src="/pictures/facebook.png" alt="facebook"></a>
+                <a href=""><img class="hidden-nav__icon social__icon" src="/pictures/twitter.png" alt="twitter"></a>
             </div>
         </div>
 <!--hidden-nav-end-->
@@ -57,13 +88,13 @@
     <!--main-->
                     <div class="main">
                         <div class="main__order">
-                            <div class="order__cursive">
+                            <div class="main__order-cursive">
                                 Drink coffee, enjoy with Samwyle
                             </div>
-                            <div class="order__text">
+                            <div class="main__order-text">
                                 Coffee Shop
                             </div>
-                            <button class="order__btn">
+                            <button class="main__order-btn">
                                 Order here
                             </button>
                         </div>
@@ -77,13 +108,13 @@
     <!--main-end-->
     <!--about-->
                     <div class="about">
-                        <div class="coffee__image">
+                        <div class="about__inner image">
                             <div class="image__text">
                                 About us
                             </div>
                             <img src="/pictures/coffee2.png" alt="coffee2">
                         </div>
-                        <div class="coffee__text">
+                        <div class="text coffee__text">
                             <div class="text__bold">Coffee Shop Samwayle</div>
                             Only one moment - when the barista reaches out over 
                             the bar to transfer the cup to the outstretched hand 
@@ -102,7 +133,7 @@
     <!--about-end-->
     <!--promotion-->
                     <div class="promotion">
-                        <div class="coffee__text">
+                        <div class="text coffee__text">
                             <div class="text__bold">Coffee of the day</div>
                             Americano coffee (Italian: Caffè Americano) is an 
                             espresso diluted with hot water. The presence of foam 
@@ -112,11 +143,11 @@
                             refers not to diluted espresso, but to a drink prepared 
                             through a filter system.
                             <br>
-                            <button class="coffee__btn">
+                            <button class="promotion__btn">
                                 Order now
                             </button>
                         </div>
-                        <div class="coffee__image">
+                        <div class="image">
                             <div class="image__text">
                                 Promotion
                             </div>
@@ -140,11 +171,11 @@
 <!--slider-->
             <section class="slider">
                 <div class="container">
-                    <div class="slider__btn left">
+                    <div class="slider__btn slider__btn--left">
                         <img src="/pictures/arrow1.png" alt="slider_arrow1">
                     </div>
                     <div class="slider__info">
-                        <div class="info__card">
+                        <div class="card">
                             <div class="card__bold">
                                 Americano
                             </div>
@@ -154,12 +185,12 @@
                                 of foam (cream) depends on how coffee and water 
                                 are mixed. 
                             </div>
-                            <button class="coffee__btn">
+                            <button class="card__btn promotion__btn">
                                 Order now
                             </button>
                         </div>
 
-                        <div class="info__card">
+                        <div class="card">
                             <div class="card__bold">
                                 Latte
                             </div>
@@ -169,12 +200,12 @@
                                 is recommended to take fat milk - at least 
                                 3.2%. In addition to it, milk foam.
                             </div>
-                            <button class="coffee__btn">
+                            <button class="card__btn promotion__btn">
                                 Order now
                             </button>
                         </div>
 
-                        <div class="info__card">
+                        <div class="card">
                             <div class="card__bold">
                                 Espresso
                             </div>
@@ -183,12 +214,12 @@
                                 or a special coffee machine, where hot water is 
                                 passed through pressed ground beans at a pressure.
                             </div>
-                            <button class="coffee__btn">
+                            <button class="card__btn promotion__btn">
                                 Order now
                             </button>
                         </div>
                     </div>
-                    <div class="slider__btn right">
+                    <div class="slider__btn slider__btn--right">
                         <img src="/pictures/arrow2.png" alt="slider_arrow2">
                     </div>
                 </div>
@@ -199,11 +230,11 @@
                 <div class="container">
                     <div class="map">
                         <img src="/pictures/map.png" alt="map">
-                        <div class="image__text">
+                        <div class="map__text image__text">
                             Contacts
                         </div>
                     </div>
-                    <img class="line" src="/pictures/line.png" alt="line">
+                    <img class="contact__line" src="/pictures/line.png" alt="line">
                     <div class="address">
                         <div class="address__bold">Our address</div>
                         110 St-Cathedral Pkwy Station<br>

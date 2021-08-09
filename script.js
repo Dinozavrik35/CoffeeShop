@@ -24,3 +24,29 @@ window.addEventListener('scroll', function(e) {
         }
     } 
 });
+
+let contact = document.getElementById("contact");
+let feedback = document.getElementById("feedback");
+
+contact.addEventListener('click', function(e) {
+    feedback.style.display = "flex";
+});
+
+let confirm = document.getElementById("confirm");
+let check = document.getElementById("check");
+
+confirm.addEventListener('click', function(e) {
+    if (confirm.checked) {
+        check.style.display = "block";
+    } else {
+        check.style.display = "none";
+    }
+});
+
+function hideForm() {
+    feedback.style.display = "none";
+    confirm.checked = true;
+    check.style.display = "block";
+}
+
+
