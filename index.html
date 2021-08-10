@@ -31,19 +31,19 @@
 <!--header-end-->
 <!--form-->
         <div class="feedback" id="feedback">
-            <div class="form">
+            <div class="form" id="form">
                 <img class="form__close" onclick="hideForm()" src="/pictures/close.png" alt="close">
                 <div class="form__text form__text--main">Contact Us</div>
                 <div class="form__text">First Name*</div>
-                <input class="form__input" type="text">
+                <input class="form__input" id="first_name" type="text">
                 <div class="form__text">Last Name</div>
-                <input class="form__input" type="text">
+                <input class="form__input" id="last_name" type="text">
                 <div class="form__text">Email*</div>
-                <input class="form__input" type="email">
+                <input class="form__input" id="email" type="email">
                 <div class="form__text">Phone Number</div>
-                <input class="form__input" type="tel">
+                <input class="form__input" id="phone" type="tel">
                 <div class="form__text">Message*</div>
-                <textarea class="form__input form__area" type="text"></textarea>
+                <textarea class="form__input form__area" id="message" type="text"></textarea>
                 <div class="form__warning">
                     <div class="form__star">* - fields are obligatory for filling</div>
                     <div class="form__confirmation">
@@ -54,12 +54,15 @@
                             I agree to the <a href="">processing of personal data</a>
                     </div>
                 </div>
-                <button class="form__btn">
+                <button class="form__btn" onclick="submitForm()">
                     Submit
                 </button>
             </div>
         </div>
 <!--form-end-->
+        <div class="success" id="success">
+            The message was sent successfully
+        </div>
 <!--hidden-nav-->
         <div class="hidden-nav" id="menu">
             <div class="hidden-nav__inner header__logo">
