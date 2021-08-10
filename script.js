@@ -15,6 +15,18 @@ function hideMenu() {
     header.style.opacity = "100%";
 }
 
+function scrollPage(section) {
+    let sectionElem = document.getElementById(section);
+    let position = sectionElem.getBoundingClientRect();
+
+    hideMenu();
+
+    window.scrollBy({
+        top: position.top - 150,
+        behavior: 'smooth'
+    });
+}
+
 let feedback = document.getElementById("feedback");
 let form = document.getElementById("form");
 
@@ -39,11 +51,12 @@ window.addEventListener('scroll', function(e) {
 let contact = document.getElementById("contact");
 let scrollForm;
 
-contact.addEventListener('click', function(e) {
+function showForm() {
+    hideMenu();
     scrollForm = window.scrollY;
     form.style.transform = "translateY(" + (scrollForm + 97) + "px)";
     feedback.style.display = "flex";
-});
+}
 
 let confirmation = document.getElementById("confirm");
 let check = document.getElementById("check");
@@ -61,8 +74,10 @@ confirmation.addEventListener('click', function(e) {
 let inputs = document.getElementsByClassName("form__input");
 
 function hideForm() {
+    success.style.opacity = "100";
     feedback.style.display = "none";
     confirmation.checked = true;
+    label.style.backgroundColor = "white";
     check.style.display = "block";
 
     for (let i = 0 ; i < inputs.length; i++) {
@@ -97,10 +112,14 @@ function submitForm() {
         email_input.placeholder = "The field is required";
         message.style.border = "solid 2px red";
         message.placeholder = "The field is required";
-    }
+        if (!confirmation.checked) {
+            label.style.backgroundColor = "red";
+        }
+    } 
     else if (!confirmation.checked) {
         label.style.backgroundColor = "red";
-    } else {
+    }
+    else {
         let name = first_name.value;
         let surname = last_name.value;
         let email = email_input.value;
@@ -133,4 +152,32 @@ for (let i = 0 ; i < inputs.length; i++) {
         inputs[i].style.border = "solid 2px #2D635E";
         inputs[i].placeholder = "";
     });
+}
+
+let slides = document.getElementsByClassName("slider__info");
+
+function slideLeft() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.animation = "slideLeft 0.8s ease"
+        if (slides[i].classList.contains("slider__info--active")) {
+            slides[i].style.display = "none";
+            slides[i].classList.remove("slider__info--active");
+        } else {
+            slides[i].style.display = "flex";
+            slides[i].classList.add("slider__info--active");
+        }
+    }
+}
+
+function slideRight() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.animation = "slideRight 0.8s ease";
+        if (slides[i].classList.contains("slider__info--active")) {
+            slides[i].style.display = "none";
+            slides[i].classList.remove("slider__info--active");
+        } else {
+            slides[i].style.display = "flex";
+            slides[i].classList.add("slider__info--active");
+        }
+    }
 }

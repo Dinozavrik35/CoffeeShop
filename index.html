@@ -19,11 +19,11 @@
                 <a class="header__logo-text" href="">Samwayle</a>
             </div>
             <nav class="nav">
-                <div class="nav__item">About us</div>
-                <div class="nav__item">Promotion</div>
-                <div class="nav__item">Shop</div>
-                <div class="nav__item">Contacts</div>
-                <button class="nav__btn" id="contact">
+                <div class="nav__item" onclick="scrollPage('about')">About us</div>
+                <div class="nav__item" onclick="scrollPage('promotion')">Promotion</div>
+                <div class="nav__item" onclick="scrollPage('shop')">Shop</div>
+                <div class="nav__item" onclick="scrollPage('contacts')">Contacts</div>
+                <button class="nav__btn" id="contact" onclick="showForm()">
                     Contact Us
                 </button>
             </nav>
@@ -71,11 +71,12 @@
                 <a class="hidden-nav__link header__logo-text" href="">Samwayle</a>
             </div>
             <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Promotion</li>
-                <li>Shop</li>
-                <li>Contacts</li>
+                <li onclick="scrollPage('home')">Home</li>
+                <li onclick="scrollPage('about')">About us</li>
+                <li onclick="scrollPage('promotion')">Promotion</li>
+                <li onclick="scrollPage('shop')">Shop</li>
+                <li onclick="scrollPage('contacts')">Contacts</li>
+                <li onclick="showForm()">Contact Us</li>
             </ul> 
             <div class="hidden-nav__socials">
                 <a href=""><img class="hidden-nav__icon social__icon" src="/pictures/insta.png" alt="insta"></a>
@@ -86,7 +87,7 @@
 <!--hidden-nav-end-->
         <div class="container">    
 <!--coffee-->  
-            <section class="coffee">
+            <section class="coffee" id="home">
                 <div class="coffee__content">
     <!--main-->
                     <div class="main">
@@ -110,7 +111,7 @@
                     </div>
     <!--main-end-->
     <!--about-->
-                    <div class="about">
+                    <div class="about" id="about">
                         <div class="about__inner image">
                             <div class="image__text">
                                 About us
@@ -135,7 +136,7 @@
                     </div>
     <!--about-end-->
     <!--promotion-->
-                    <div class="promotion">
+                    <div class="promotion" id="promotion">
                         <div class="text coffee__text">
                             <div class="text__bold">Coffee of the day</div>
                             Americano coffee (Italian: Caffè Americano) is an 
@@ -172,64 +173,111 @@
     <!--socials-end-->    
 <!--coffee-end-->   
 <!--slider-->
-            <section class="slider">
+            <section class="slider" id="shop">
                 <div class="container">
-                    <div class="slider__btn slider__btn--left">
+                    <div class="slider__btn slider__btn--left" onclick="slideLeft()">
                         <img src="/pictures/arrow1.png" alt="slider_arrow1">
                     </div>
-                    <div class="slider__info">
-                        <div class="card">
-                            <div class="card__bold">
-                                Americano
+                    <div class="slider__inner">
+                        <div class="slider__info slider__info--active">
+                            <div class="card">
+                                <div class="card__bold">
+                                    Americano
+                                </div>
+                                <div class="card__text">
+                                    Americano coffee (Italian: Caffè Americano) is 
+                                    an espresso diluted with hot water. The presence 
+                                    of foam (cream) depends on how coffee and water 
+                                    are mixed. 
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
                             </div>
-                            <div class="card__text">
-                                Americano coffee (Italian: Caffè Americano) is 
-                                an espresso diluted with hot water. The presence 
-                                of foam (cream) depends on how coffee and water 
-                                are mixed. 
-                            </div>
-                            <button class="card__btn promotion__btn">
-                                Order now
-                            </button>
-                        </div>
 
-                        <div class="card">
-                            <div class="card__bold">
-                                Latte
+                            <div class="card">
+                                <div class="card__bold">
+                                    Latte
+                                </div>
+                                <div class="card__text">
+                                    The name Latte (from Italian “milk”) speaks 
+                                    about the main ingredient of the drink. It 
+                                    is recommended to take fat milk - at least 
+                                    3.2%. In addition to it, milk foam.
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
                             </div>
-                            <div class="card__text">
-                                The name Latte (from Italian “milk”) speaks 
-                                about the main ingredient of the drink. It 
-                                is recommended to take fat milk - at least 
-                                3.2%. In addition to it, milk foam.
-                            </div>
-                            <button class="card__btn promotion__btn">
-                                Order now
-                            </button>
-                        </div>
 
-                        <div class="card">
-                            <div class="card__bold">
-                                Espresso
+                            <div class="card">
+                                <div class="card__bold">
+                                    Espresso
+                                </div>
+                                <div class="card__text">
+                                    Espresso - black coffee made in a coffee machine 
+                                    or a special coffee machine, where hot water is 
+                                    passed through pressed ground beans at a pressure.
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
                             </div>
-                            <div class="card__text">
-                                Espresso - black coffee made in a coffee machine 
-                                or a special coffee machine, where hot water is 
-                                passed through pressed ground beans at a pressure.
+                        </div>
+                        <div class="slider__info">
+                            <div class="card">
+                                <div class="card__bold">
+                                    Coffee #1
+                                </div>
+                                <div class="card__text">
+                                    Americano coffee (Italian: Caffè Americano) is 
+                                    an espresso diluted with hot water. The presence 
+                                    of foam (cream) depends on how coffee and water 
+                                    are mixed. 
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
                             </div>
-                            <button class="card__btn promotion__btn">
-                                Order now
-                            </button>
+
+                            <div class="card">
+                                <div class="card__bold">
+                                    Coffee #2
+                                </div>
+                                <div class="card__text">
+                                    The name Latte (from Italian “milk”) speaks 
+                                    about the main ingredient of the drink. It 
+                                    is recommended to take fat milk - at least 
+                                    3.2%. In addition to it, milk foam.
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__bold">
+                                    Coffee #3
+                                </div>
+                                <div class="card__text">
+                                    Espresso - black coffee made in a coffee machine 
+                                    or a special coffee machine, where hot water is 
+                                    passed through pressed ground beans at a pressure.
+                                </div>
+                                <button class="card__btn promotion__btn">
+                                    Order now
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="slider__btn slider__btn--right">
+                    <div class="slider__btn slider__btn--right" onclick="slideRight()">
                         <img src="/pictures/arrow2.png" alt="slider_arrow2">
                     </div>
                 </div>
             </section>
 <!--slider-end-->
 <!--contact-->
-            <section class="contact">
+            <section class="contact" id="contacts">
                 <div class="container">
                     <div class="map">
                         <img src="/pictures/map.png" alt="map">
